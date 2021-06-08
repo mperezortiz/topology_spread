@@ -1,0 +1,79 @@
+
+This document indicates the meaning of the columns of our simulation result files. The columns include hyperparameters used in the graph generator, topological network metrics computed over the graph and finally aggregated results of the simulation. We aggregate these results because each simulation is run 10 times. Thus, we report average and standard deviation of the simulation results. That is, for example, in mean_inf we report the average total number of infected individuals across the 10 simulations. 
+
+In our analysis, we have focused on studying the prediction abilities of different network metrics on the total percentage of infected individuals (computed as (mean_inf + mean_inf_rem)/nodes). We have also analysed the differences between networks without global interactions and networks that have a 20% of global interactions. However, we provide many more metrics that could be used in subsequent analyses of these results.
+
+
+Data columns
+--------------------------------
+a: strength of common neighbor's effect on edge formation edges (exclusive to community based networks)
+alg_conn: algebraic connectivity of the graph (computed using networkx.algebraic_connectivity with method lanczos)
+assort_corr: assortativity correlation of the graph (computed using networkx.degree_pearson_correlation_coefficient)
+avg_betw: average betweenness (computed using networkx.betweenness_centrality)
+avg_clos: average closeness (computed using networkx.closeness_centrality)
+avg_degree: average degree (computed using network.degree)
+avg_eccentricity: average eccentricity (eccentricity is computed using networkx.eccentricity)
+b: strength of community structure, i.e. the probability of edges to be formed within communities (exclusive to community based networks)
+clust: clustering coefficient (as computed by networkx.average_clustering)
+con_comp: number of connected components (computed using networkx.number_connected_components)
+diameter: diameter of the graph (computed using networkx.diameter)
+entropy_degree: entropy of the degree distribution
+g: strength of degree similarity effect on edge formation (exclusive to community based networks)
+glb_eff: global efficiency of the graph (as computed by networkx.global_efficiency)
+is_con: binary value that indicates whether the graph is connected (computed using networkx.is_connected)
+iter: iteration (we generate each random social graph 30 times)
+k: number of communities for the community based graph generator (exclusive to community based networks)
+kur_degree: kurtosis of the degree distribution
+loc_eff: local efficiency of the graph (as computed by networkx.local_efficiency)
+max_degree: maximum of the degree distribution
+mean_inf: average total number of individuals infected in the population (simulation without global connections)
+mean_inf_pert: average total number of individuals infected in the population (simulation with 10% of global connections)
+mean_inf_pert2: average total number of individuals infected in the population (simulation with 20% of global connections)
+mean_inf_pert_rem: average total number of individuals infected in the population in the second generation (simulation with 10% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_inf_pert_rem2: average total number of individuals infected in the population in the second generation (simulation with 20% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_inf_rem: average total number of individuals infected in the population in the second generation (simulation without global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_peak: average peak of individuals infected in the population (simulation without global connections)
+mean_peak_pert: average peak of individuals infected in the population (simulation with 10% of global connections)
+mean_peak_pert2: average peak of individuals infected in the population (simulation with 20% of global connections)
+mean_peak_pert_rem: average peak of individuals infected in the population in the second generation (simulation with 10% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_peak_pert_rem2: average peak of individuals infected in the population in the second generation (simulation with 20% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_peak_rem: average peak of individuals infected in the population in the second generation (simulation without global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_r0: average estimated R0 at the beginning of the simulation (simulation without global connections)
+mean_r0_pert: average estimated R0 at the beginning of the simulation (simulation with 10% global connections)
+mean_r0_pert2: average estimated R0 at the beginning of the simulation (simulation with 20% global connections)
+mean_r0_pert_rem: average estimated R0 at the beginning of the second generation simulation (simulation with 10% of global connections, we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_r0_pert_rem2: average estimated R0 at the beginning of the second generation simulation (simulation with 20% of global connections, we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+mean_r0_rem: average estimated R0 at the beginning of the second generation simulation (we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+min_degree: mininum of the degree distribution
+network_family: type of network family (erdos renyi, scale free, small world or community based)
+node_conn: node connectivity (as computed by networkx.node_connectivity)
+nodes: Number of nodes (individuals) in the graph
+p: Graph generator hyperparameter for small world and scale free. For small-world networks this hyperparameter breaks clustering, increasing global connections (g). For scale-free networks, the hyperparameter has the opposite effect, increasing clustering.
+q: the probability of a node belonging to the multiple communities (exclusive to community based networks)
+r: the number of communities each node can belong to (exclusive to community based networks)
+radius: radius of the graph (computed using networkx.radius)
+skew_betw: skewness of graph betwenness
+skew_clos: skewness of graph closeness
+skew_degree: skewness of the degree distribution
+skew_eccentricity: skewness of graph eccentricity
+spectral_radius: spectral radius of the graph (computed using max(networkx.adjacency_spectrum))
+std_betw: standard deviation of graph betweenness
+std_clos: standard deviation of closeness
+std_degree: standard deviation of degree distribution
+std_eccentricity: standard deviation of graph eccentricity
+std_inf: standard deviation of total number of individuals infected in the population (simulation without global connections)
+std_inf_pert: standard deviation of total number of individuals infected in the population (simulation with 10% global connections)
+std_inf_pert2: standard deviation of total number of individuals infected in the population (simulation with 20% global connections)
+std_inf_pert_rem: standard deviation of the number of individuals infected in the population in the second generation (simulation with 10% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+std_inf_pert_rem2: standard deviation of the number of individuals infected in the population in the second generation (simulation with 20% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+std_inf_rem: standard deviation of the number of individuals infected in the population in the second generation (simulation without global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+std_peak: standard deviation of peak of individuals infected in the population (simulation without global connections)
+std_peak_pert: standard deviation of peak of individuals infected in the population (simulation with 10% global connections)
+std_peak_pert2: standard deviation of peak of individuals infected in the population (simulation with 20% global connections)
+std_peak_pert_rem: standard deviation of the peak of individuals infected in the population in the second generation (simulation with 10% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+std_peak_pert_rem2: standard deviation of the peak of individuals infected in the population in the second generation (simulation with 20% of global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+std_peak_rem: standard deviation of the peak of individuals infected in the population in the second generation (simulation without global connections where we reintroduce the pathogen in the population once herd immunity has been achieved and the pathogen has naturally died off)
+trans: transitivity (as computed by networkx.transitivity)
+w_ind: wiener index of the graph (computed using networkx.wiener_index)
+
+
